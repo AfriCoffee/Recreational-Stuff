@@ -70,9 +70,10 @@ int main(int argc, char** argv) {
                                                    loopback=false;          
                                                    break;
                                         default  : "Um...what?? I don't understand...";
-                                                   loopback=true;
+                                                   loopback=true;//loops back to very begining (grr...) however useful for when in a text based rpg and user dies...
                                                    break;
                                     }}
+                                                   break;
             case 'b' :
             case 'B' : cout<<"I'm just a test program to try out switch functions.",
                             cout<<"Seems like it works!"<<endl;
