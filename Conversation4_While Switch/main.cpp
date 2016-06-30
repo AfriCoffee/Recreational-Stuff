@@ -23,8 +23,11 @@ using namespace std; //Iostream uses the standard namespace
  */
 int main(int argc, char** argv) {
 //Declare Variables Here, NO DOUBLES
-    char choice;//If you have a variety
-    char A,a,B,b,C,c;
+    char choice;         //For general answer
+    char A,a,B,b,C,c;    //Answers expected to be given
+    bool loopback = true;//for if invalid/wrong answer is given
+    do{                  //Entire code in Do-While Loop (for wrong answers)
+    
     //Input Data
     cout<<"Hi";
     cout<<" "<<endl;
@@ -35,53 +38,67 @@ int main(int argc, char** argv) {
     cin>>choice;
     
     //Process Data
-    while (choice==A,a,B,b,C,c)
-    {
-        switch (choice)
-                case A||a : cout<<"Don't be shy! I don't bite!"<<endl;
+//First Set of Choices
+    switch (choice)
+        {
+        case 'a' :
+        case 'A' : {cout<<"Don't be shy! I don't bite!"<<endl;
                             cout<<" "<<endl;
                             cout<<"A - S...sorry...I'm just not too familiar with you..."<<endl;
                             cout<<"B - I didn't think so, I'm just a bit shy, is all."<<endl;
                             cout<<"C - Well no shit Sherlock, you're a computer program!"<<endl;
                             cin>>choice;
-                
-                case B||b : cout<<"I'm just a test program to try out switch functions.",
+                            loopback = false;
+                                    
+//Second Set of Choices (A)              
+                                    switch (choice)
+                                    {
+                                        
+                                        case 'a' :
+                                        case 'A' : cout<<"It's okay, I'd like to know more about",
+                                                   cout<<"you too!"<<endl;
+                                                   loopback=false;        
+                                                   break;
+                                        case 'b' :
+                                        case 'B' : cout<<"Aww, that's alright! You can open up",
+                                                   cout<<"to me! Like I said, I don't bite!"<<endl;
+                                                   loopback=false;
+                                                   break;
+                                        case 'c' :
+                                        case 'C' : cout<<"You know I've had enough of your",
+                                                   cout<<"bullshit jackass..."<<endl;
+                                                   loopback=false;          
+                                                   break;
+                                        default  : "Um...what?? I don't understand...";
+                                                   loopback=true;
+                                                   break;
+                                    }}
+            case 'b' :
+            case 'B' : cout<<"I'm just a test program to try out switch functions.",
                             cout<<"Seems like it works!"<<endl;
                             cout<<" "<<endl;
                             cout<<"A - Oh...that's nice..."<<endl;
                             cout<<"B - Really? That's so cool!"<<endl;
                             cout<<"C - Useless pile of junk..."<<endl;
                             cin>>choice;
-      
-      
-  
+                            loopback = false;
+                            break;
+            
+            case 'c' :
+            case 'C' : cout<<"well the hell with you too, jerk!"<<endl;
+                            cout<<" "<<endl;
+                            cout<<"A - *flustered* I-I'm sorry! That came out wrong!"<<endl;
+                            cout<<"B - *laughs* I'm just messing with you!"<<endl;
+                            cout<<"C - *crosses arms and rolls eyes* It was an honest question!"<<endl;
+                            cin>>choice;
+                            loopback = false;
+                            break;
+       
+                default : cout<<"Um...what? I don't understand..."<<endl;
+                loopback=true;
+        break;}
     }
-    else if (choice==C||c)
-    {
-        cout<<"well the hell with you too, jerk!"<<endl;
-        cout<<" "<<endl;
-        cout<<"A - *flustered* I-I'm sorry! That came out wrong!"<<endl;
-        cout<<"B - *laughs* I'm just messing with you!"<<endl;
-        cout<<"C - *crosses arms and rolls eyes* It was an honest question!"<<endl;
-        cin>>choice;
-    }
-    //else 
-        if (choice!=A||a||B||b||C||c)
-    {
-       //while (choice!=A||a||B||b||C||c)
-       //{
-        cout<<"Um...what? I don't understand..."<<endl;
-        cout<<"Enter A, B, or C to reply."<<endl;
-        cout<<" "<<endl;
-        cout<<" "<<endl;
-        cout<<"Hi";
-        cout<<" "<<endl;
-        cout<<"A - *shyly* h...hi..."<<endl;
-        cout<<"B - *enthusiastically* Hi! Who are you?"<<endl;
-        cout<<"C - *sneers* Who the hell are you?"<<endl;
-        cin>>choice;
-       //}
-    }
+    while (loopback);
     //Output Data
     
     

@@ -58,7 +58,8 @@ int main(int argc, char** argv) {
                                   cout<<"bullshit jackass..."<<endl;
                                   break;
                          default:"Um...what? I don't understand...";
-                                  break;
+                                 loopback = true         
+                                 break;
                        }
                    
                       break;
